@@ -6,6 +6,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
 struct ListNode {
     int val;
     ListNode *next;
