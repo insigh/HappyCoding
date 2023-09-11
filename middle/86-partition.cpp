@@ -19,10 +19,11 @@ struct ListNode {
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-       ListNode* small = new ListNode(0);
-        ListNode* smallHead = small;
-        ListNode* large = new ListNode(0);
-        ListNode* largeHead = large;
+        ListNode *small = new ListNode(0);
+        ListNode *small_head = small;
+        ListNode *large = new ListNode(0);
+        ListNode *large_head = large;
+
         while (head != nullptr) {
             if (head->val < x) {
                 small->next = head;
@@ -33,8 +34,9 @@ public:
             }
             head = head->next;
         }
+
+        small->next = large_head->next;
         large->next = nullptr;
-        small->next = largeHead->next;
-        return smallHead->next;
+        return small_head->next;
     }
 };
