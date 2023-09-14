@@ -25,8 +25,6 @@ public:
         ListNode *large_head = large;
 
         while (head != nullptr) {
-
-
             if (head->val < x) {
                 small->next = head;
                 small = small->next;
